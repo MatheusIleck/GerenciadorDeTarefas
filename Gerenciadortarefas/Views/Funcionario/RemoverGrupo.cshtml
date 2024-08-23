@@ -1,0 +1,26 @@
+﻿@model Grupos
+
+@{
+    Layout = "_funcionarioLayout";
+
+}
+<div class="container-formulario">
+    <form asp-action="AdicionarGrupo" asp-antiforgery="true" method="post" class="formulario-criacao-grupo">
+        <h2>Deseja remover este grupo?</h2>
+        <input type="hidden" asp-for="IdGrupo" />
+        <div class="grupo-de-inputs">
+            <label for="nome">Nome do Grupo</label>
+            <input type="text" asp-for="NomeGrupo" disabled  />
+        </div>
+        <div class="grupo-de-inputs">
+            <label>Descrição do grupo</label>
+            <textarea maxlength="255" asp-for="DescricaoGrupo" disabled></textarea>
+        </div>
+        <div class="grupo-de-inputs botoes">
+            <a asp-action="index" class="botao-cancelar">Voltar </a>
+            <button class="botao remover-grupo" asp-route-id="IdGrupo"> Remover Grupo</button>
+        </div>
+
+    </form>
+
+</div>

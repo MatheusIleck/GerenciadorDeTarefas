@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Grupos>
+@{
+    Layout = "_FuncionarioLayout";
+
+}
+
+
+<section class="principal">
+    <div class="container-principal">
+        <div class="cabecalho-container">
+            <h2>Meus Grupos</h2>
+
+
+            @{
+                string diaatual = DateTime.Now.ToString("D");
+                <span> @diaatual</span>
+            }
+
+        </div>
+
+        <div class="corpo-container">
+            @if (Model != null)
+            {
+
+
+                <table id="minhatabela" class="row-border">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Opções</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var grupo in Model)
+                        {
+
+                            <tr>
+                                <td class="titulo">@grupo.NomeGrupo</td>
+                                <td>@grupo.DescricaoGrupo</td>
+                                <td>
+                                    <a asp-route-id="@grupo.IdGrupo" class="opctabela" asp-action="VisualizarGrupo" asp-controller="Funcionario">Ver mais</a>
+                                    <a asp-route-id="@grupo.IdGrupo" class="opctabela" asp-action="EditarGrupo" asp-controller="Funcionario">Editar</a>
+                                    <a asp-route-id="@grupo.IdGrupo" class="opctabela" asp-action="RemoverGrupo">Remover</a>
+
+                                </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+
+        <a class="btn-criargrupo" asp-action="AdicionarGrupo"><i class="bi bi-plus"></i>Adicionar novo grupo</a>
+    </div>
+
+</section>
+
+

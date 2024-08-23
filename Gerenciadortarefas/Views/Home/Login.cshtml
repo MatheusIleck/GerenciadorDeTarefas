@@ -1,0 +1,28 @@
+﻿@model Funcionarios
+@{
+    Layout = "_loginlayout";
+
+}
+
+<div class="container">
+    <form class="formulario" asp-action="Login" method="post">
+        <h1>Login</h1>
+        <div class="grupo-de-inputs">
+            <label asp-for="Nome">Digite o usuario</label>
+            <input type="text" asp-for="Nome" required autocomplete="off" />
+        </div>
+        <div class="grupo-de-inputs">
+            <label asp-for="Senha">Digite sua senha</label>
+            <input type="password" asp-for="Senha" required />
+        </div>
+        <div class="grupo-de-inputs botao">
+            <a asp-action="CadastrarFuncionario" class="Criar-conta">Criar nova conta </a>
+
+            <button>confirmar</button>
+        </div>
+
+    </form>
+</div>
+
+
+

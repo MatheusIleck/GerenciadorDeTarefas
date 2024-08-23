@@ -1,0 +1,26 @@
+﻿@using GerenciamentoDeTarefas.Dto.Tarefa
+@model CriarTarefaDto
+
+@{
+    Layout = "_funcionariolayout";
+}
+
+<div class="container-formulario">
+    <form asp-action="AdicionarTarefa" method="post" class="formulario-criacao-grupo">
+        <input type="hidden" asp-for="idgrupo" />
+        <div class="grupo-de-inputs">
+            <label for="nome">Nome da tarefa</label>
+            <input type="text" maxlength="80" autocomplete="off" asp-for="nomeTarefa" required />
+        </div>
+        <div class="grupo-de-inputs">
+            <label>Descrição da tarefa</label>
+            <textarea maxlength="255" asp-for="descricaoTarefa"></textarea>
+        </div>
+ 
+        <div class="grupo-de-inputs">
+            <button class="botao-criar-grupo">Criar Tarefa</button>
+        </div>
+
+    </form>
+
+</div>

@@ -1,0 +1,24 @@
+﻿@model Tarefas
+
+@{
+    Layout = "_funcionariolayout";
+}
+<div class="container-formulario">
+    <form asp-action="EditarTarefa" method="post" class="formulario-criacao-grupo">
+        <input type="hidden" asp-for="IdGrupo" />
+        <input type="hidden" asp-for="IdStatus" />
+        <div class="grupo-de-inputs">
+            <label for="nome">Nome da tarefa</label>
+            <input type="text" maxlength="80" autocomplete="off" asp-for="NomeTarefa" required />
+        </div>
+        <div class="grupo-de-inputs">
+            <label>Descrição da tarefa</label>
+            <textarea maxlength="255" asp-for="DescricaoTarefa"></textarea>
+        </div>
+        <div class="grupo-de-inputs">
+            <button class="botao-criar-grupo">Atualizar</button>
+        </div>
+
+    </form>
+
+</div>

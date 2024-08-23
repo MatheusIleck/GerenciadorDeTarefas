@@ -1,0 +1,67 @@
+﻿@model Grupos
+
+@{
+    Layout = "_funcionariolayout";
+}
+
+<section class="principal">
+    <div class="container-principal">
+        <div class="cabecalho-container">
+
+            @{
+                <h2>Grupo: @Model.NomeGrupo</h2>
+
+
+                string diaatual = DateTime.Now.ToString("D");
+                <span> @diaatual</span>
+            }
+
+        </div>
+
+        <div class="corpo-container">
+
+
+
+            @if (Model != null)
+            {
+
+
+                <table id="minhatabela" class="row-border">
+
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Status</th>
+                            <th>Opções</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var tarefa in Model.Tarefas)
+                        {
+
+                            <tr>
+                                <td class="titulo">@tarefa.NomeTarefa</td>
+                                <td>@tarefa.DescricaoTarefa</td>
+                                <td>@tarefa.IdStatusNavigation.Descricao</td>
+
+
+                                <td>
+                                    <a asp-route-id="@tarefa.Id" class="opctabela" asp-action="EditarTarefa" asp-controller="Funcionario">Editar</a>
+                                    <a asp-route-id="@tarefa.Id" asp-route-idgrupo="@tarefa.IdGrupo" class="opctabela" asp-action="RemoverTarefa">Remover</a>
+                                    <a asp-route-id="@tarefa.Id" asp-route-idgrupo="@tarefa.IdGrupo" asp-action="ConcluirTarefa" class="opctabela">Concluir</a>
+
+
+                                </td>
+
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+            <a class="btn-criargrupo" asp-route-id="@Model.IdGrupo" asp-action="AdicionarTarefa"><i class="bi bi-plus"></i>Adicionar nova tarefa</a>
+    </div>
+
+</section>

@@ -1,0 +1,28 @@
+﻿@using GerenciamentoDeTarefas.Dto.Grupo
+
+@model Grupos
+
+@{
+    Layout = "_funcionariolayout";
+
+}
+
+<div class="container-formulario">
+    <form asp-action="Editargrupo" method="post" class="formulario-criacao-grupo">
+        <input type="hidden" asp-for="IdGrupo" />
+        <div class="grupo-de-inputs">
+            <label for="nome">Nome do Grupo</label>
+            <input type="text" maxlength="80" autocomplete="off" asp-for="NomeGrupo" required />
+        </div>
+        <div class="grupo-de-inputs">
+            <label>Descrição do grupo</label>
+            <textarea maxlength="255" asp-for="DescricaoGrupo"></textarea>
+        </div>
+        <div class="grupo-de-inputs">
+            <button class="botao-criar-grupo">Atualizar</button>
+        </div>
+
+    </form>
+
+</div>
+

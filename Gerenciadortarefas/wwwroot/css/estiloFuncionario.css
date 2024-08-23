@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --blue: #0000FF;
+    --white: #fff;
+    --dark: #1e1c2a;
+    --bluegrotto: #5b74c4;
+}
+
+body {
+    color: var(--dark);
+    background: url("../img/background3.png");
+    background-size: cover;
+}
+
+main {
+    margin-left: calc(5.2% + 1rem);
+}
+
+.navigation {
+    position: fixed;
+    display: flex;
+    width: 6%;
+    height: 100vh;
+    background: var(--white);
+    padding: 1% 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+    -webkit-box-shadow: 7px 3px 21px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 3px 21px 1px rgba(0,0,0,0.75);
+    box-shadow: 7px 3px 21px 1px rgba(0,0,0,0.75);
+}
+
+    .navigation .logo {
+        color: var(--dark);
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+    }
+
+.logo span:nth-child(1) {
+    color: var(--blue);
+}
+
+.navigation .titulo-header {
+    margin-left: 8%;
+    display: none;
+}
+
+.navigation ul {
+    height: 100%;
+    list-style-type: none;
+    gap: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+ul .nav-item {
+    width: 100%;
+}
+
+ul li.nav-item a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 1.4rem;
+    margin-bottom: 2%;
+    padding: 20% 0;
+    display: flex;
+    justify-content: center;
+}
+
+    ul li.nav-item a:hover {
+        Background: var(--blue);
+        color: var(--white);
+        transition: 0.5s;
+    }
+
+ul li.nav-item i {
+    font-size: 1.5rem;
+}
+
+.icon {
+    width: 2.9rem;
+}
+
+.header-topo {
+    background: var(--blue);
+    height: 100px;
+}
+
+.principal {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-principal {
+    background: #5b74c4;
+    height: 100%;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.cabecalho-container {
+    color: var(--white);
+    margin: 2% 0;
+}
+
+
+.corpo-container {
+    width: 100%;
+    max-height: 720px;
+}
+
+
+ 
+
+/*personalizando a tabela */
+#minhatabela_wrapper {
+    background: var(--white);
+    color: var(--dark);
+    border-radius: 20px;
+    padding: 2%;
+    margin-bottom: 1%;
+}
+
+.titulo {
+    font-weight: 700;
+}
+
+.btn-criargrupo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    border-radius: 10px;
+    background: white;
+    color: var(--dark);
+}
+    .btn-criargrupo i {
+        font-size: 1.5rem;
+    }
+
+    .btn-criargrupo:hover {
+        background: #dee3f3;
+        transition: 0.2s;
+    }
+.opctabela{
+    padding:1%;
+    border-radius:5px;
+    color:black;
+}
+.opctabela:first-child{
+    background-color:var(--bluegrotto);
+    color:white;
+
+}
+    .opctabela:nth-last-child(2n) {
+        background-color: red;
+        color:white;
+    }
+    .opctabela:last-child {
+        color: white;
+        background-color: green;
+    }
+
+/*personalizando a tabela */
+
+
+
+/*Criação de grupos*/
+
+
+
+.container-formulario{
+    width:100%;
+    height:100vh;
+    background:var(--bluegrotto);
+}
+.formulario-criacao-grupo {
+    position: relative;
+    top: 20%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+
+    background: var(--white);
+    border-radius: 10px;
+    padding: 3%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.grupo-de-inputs{
+    margin: 2% 0% 2% 0%;
+
+}
+   
+.grupo-de-inputs input, textarea{
+    width: 100%;
+    border-radius:5px;
+    border:1px solid black;
+    padding:2%;
+    font-size:1.2rem;
+    resize:none;
+}
+    .grupo-de-inputs.botoes {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+.grupo-de-inputs button{
+    padding:2%;
+    width:100%;
+    background:var(--white);
+    color:var(--dark);
+    border-radius:5px;
+    border:2px solid black;
+
+    
+}
+   
+    .grupo-de-inputs button:hover {
+        cursor: pointer;
+        background: var(--bluegrotto);
+        color: var(--white);
+        transition: 0.3s;
+    }
+
+.botao-cancelar {
+    padding: 2%;
+    width: 100%;
+    background: var(--white);
+    color: var(--dark);
+    border-radius: 5px;
+    border: 2px solid black;
+    text-align:center;
+}
+    .botao-cancelar:hover {
+        cursor: pointer;
+        background: var(--bluegrotto);
+        color: var(--white);
+        transition: 0.3s;
+    }
